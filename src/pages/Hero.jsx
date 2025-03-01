@@ -51,7 +51,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full px-4 bg-[#000] text-[#fff]">
       <Navbar />
       <div className="hero-content flex lg:mt-5 flex-col justify-center w-full items-center lg:justify-between lg:flex-row">
         <h1
