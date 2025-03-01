@@ -2,31 +2,31 @@
   {
     "name": "MMC CLUB",
     "link": "https://mmc-club.vercel.app/",
-    "src": "img/Screenshot (4).jpg"
+    "src": "/img/Screenshot (4).jpg"
   },
   {
     "name": "Expo",
     "link": "https://exoape-clone-chi.vercel.app/",
-    "src": "img/img3.jpg" 
+    "src": "/img/img3.jpg" 
   },
   {
     "name": "Ramos",
     "link": "https://react-gsap-ramos-colne.vercel.app/",
-   "src": "img/img2.jpg"
+   "src": "/img/img2.jpg"
   },
   {
     "name": "Zentry",
     "link": "https://zentry-com-clone.vercel.app/",
-     "src": "img/img1.jpg"
+     "src": "/img/img1.jpg"
   },
   {
     "name": "Rhythminfluence",
     "link": "https://rhythminfluence-clone.vercel.app/",
-     "src": "img/img4.jpg"
+     "src": "/img/img4.jpg"
   },
   {
     "name": "Jeton",
     "link": "https://balamiayush.github.io/jeton-clone/",
-     "src": "img/img6.jpg"
+     "src": "/img/img6.jpg"
   }
 ]

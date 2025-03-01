@@ -35,9 +35,9 @@ useGSAP(()=>{
     <>
     <div className="cirlce w-5 h-5 bg-red-500 z-[100] fixed rounded-full top-0 left-0 "></div>
       <div className="w-full bg-[#fff]  main z-[10]   overflow-x-hidden relative">
-      <Loader/>
+      {/* <Loader/> */}
         <Hero/>
-        <Page2/>
+        {/* <Page2/> */}
       </div>
     </>
   );

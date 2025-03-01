@@ -6,8 +6,7 @@ import gsap from "gsap";
 
 const Hero = () => {
   const [currentHeadingIndex, setCurrentHeadingIndex] = useState(0);
-  const headings = ["WEB_Developer.", 'WEB_Designer.', "WEB_Freelance."];
-
+  const headings = ["Frontend Magic.", "Smooth Animations.", "Backend."];
   const headingRef = useRef(null);
   const charRefs = useRef([]);
 
@@ -51,36 +50,31 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full px-4 bg-[#000] text-[#fff]">
+    <div className="w-full h-screen px-4 bg-[#fff]">
       <Navbar />
-      <div className="hero-content flex lg:mt-5 flex-col justify-center w-full items-center lg:justify-between lg:flex-row">
+      <div className="hero-content    lg:mt-5   w-1/2 h-1/2   items-center lg:justify-between flex">
         <h1
-         style={{
-            fontFamily: 'var(--font-family2)'
-         }}
-         className=" font-bold text-[3rem] heroh1 lg:text-[5rem] flex items-center gap-2">
-          <span  style={{
-            fontFamily: 'var(--font-family3)'
-         }} className="text-[#A071FF] px-8 bg-[#dadada] rounded-2xl  ">
-            I AM
-          </span>
+
+          className=" font-bold text-[3rem] leading-none  flex flex-col items-center justify-center text-center  heroh1 lg:text-[2rem]  gap-2"
+        >
+          <div
+
+            className=" px-8  rounded-2xl  "
+          >
+            👋 Hi, I'm Aayush
+          </div>
+          <div
+            className=" px-8  rounded-2xl  "
+          >
+            I build immersive, interactive, and visually stunning web experiences.
+          </div>
           <motion.span
-          style={{
-            fontFamily: 'var(--font-family3)'
-         }}
             ref={headingRef}
             className="rounded-2xl p-2 inline-block  overflow-hidden heroh1"
           >
             {renderCharacters(headings[currentHeadingIndex])}
           </motion.span>
         </h1>
-      </div>
-      <div className="img w-full h-[50vh] lg:h-[90vh]">
-        <img
-          className="w-full h-full object-cover"
-          src="public/210000.jpg"
-          alt=""
-        />
       </div>
     </div>
   );

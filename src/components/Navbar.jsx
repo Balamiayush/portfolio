@@ -197,7 +197,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-[1.5rem] lg:text-[2.5rem] cursor-pointer font-bold"
+            className="text-[1rem] lg:text-[1.5rem] cursor-pointer font-bold"
           >
             {currentHeading}
           </motion.a>
