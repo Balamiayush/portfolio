@@ -78,7 +78,7 @@ const Hero = () => {
       <div className="img w-full h-[50vh] lg:h-[90vh]">
         <img
           className="w-full h-full object-cover"
-          src="src/assets/hero.jpg"
+          src="public/210000.jpg"
           alt=""
         />
       </div>
