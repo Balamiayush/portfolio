@@ -1,0 +1,38 @@
+
+
+@import "tailwindcss";
+@font-face {
+    font-family: 'gilroyRegular';
+    src: url('./assets/fonts/Gilroy-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'gilroyBold';
+    src: url('./assets/fonts/Gilroy-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'gilroyMedium';
+    src: url('./assets/fonts/Gilroy-Medium.ttf');
+}
+:root{
+    --font-family1: 'gilroyRegular';
+}
+:root{
+    --font-family2: 'gilroyBold';
+}
+:root{
+    --font-family3: 'gilroyMedium';
+}
+
+* {
+    font-family: var(--font-family1);
+}
+*::selection{
+    background: salmon;
+    color: white;
+}
+::-webkit-scrollbar{
+    display: none;
+
+}

@@ -1,0 +1,32 @@
+export const img = [
+{
+    name: "MMC CLUB",
+    link: "https://mmc-club.vercel.app/",
+    src: "/assets/mmc.png",
+  },
+  {
+    name: "Expo_clone",
+    link: "https://expo-clone-1.vercel.app/",
+    src: "/assets/projectimg/expo.png",
+  },
+  {
+    name: "Ramos_clone",
+    link: "https://react-gsap-ramos-colne.vercel.app/",
+    src: "/assets/projectimg/ramos.png",
+  },
+  {
+    name: "Zentry_clone",
+    link: "https://zentry-com-clone.vercel.app/",
+    src: "/assets/projectimg/zentry.png",
+  },
+  {
+    name: "Rhythminfluence_clone",
+    link: "https://rhythminfluence-clone.vercel.app/",
+    src: "/assets/projectimg/rhythminfluence.png",
+  },
+  {
+    name: "Jeton_clone",
+    link: "https://balamiayush.github.io/jeton-clone/",
+    src: "/assets/projectimg/jeton.png",
+  }
+]
