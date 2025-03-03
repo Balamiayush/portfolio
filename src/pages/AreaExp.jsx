@@ -1,8 +1,25 @@
 import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 const SkillsCircle = () => {
   const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
+  const mainControls = useAnimation();
+  const circleControls = useAnimation();
+  const labelControls = useAnimation();
+
+  // Start animations when the component comes into view
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+      circleControls.start("visible");
+      labelControls.start("visible");
+    } else {
+      mainControls.start("hidden");
+      circleControls.start("hidden");
+      labelControls.start("hidden");
+    }
+  }, [isInView, mainControls, circleControls, labelControls]);
 
   // Skills data organized by category
   const skillsData = {
@@ -32,7 +49,7 @@ const SkillsCircle = () => {
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" }
     }
   };
 
@@ -58,14 +75,18 @@ const SkillsCircle = () => {
 
   return (
     <div
-    style={{
-      fontFamily: "var(--font-family3)"
-    }}
-     className="w-full min-h-[100vh] bg-gradient-to-b from-blue-50 to-indigo-50 py-16 overflow-hidden">
+      style={{
+        fontFamily: "var(--font-family3)"
+      }}
+      className="w-full min-h-[100vh] bg-gradient-to-b from-blue-50 to-indigo-50 py-16 overflow-hidden "
+    >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        animate={mainControls}
+        variants={{
+          hidden: { opacity: 0, y: -20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+        }}
         className="max-w-6xl mx-auto text-center mb-12"
       >
         <h1 className="text-4xl font-bold text-indigo-800 mb-4">My Skills</h1>
@@ -80,7 +101,8 @@ const SkillsCircle = () => {
           className="absolute z-20 bg-white rounded-full shadow-xl w-40 h-40 flex items-center justify-center"
           variants={circleVariants}
           initial="hidden"
-          animate="visible"
+          animate={circleControls}
+          custom={0}
         >
           <div className="text-center">
             <div className="rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 w-24 h-24 mx-auto mb-2 flex items-center justify-center text-white text-xl font-bold">
@@ -92,10 +114,11 @@ const SkillsCircle = () => {
 
         {/* Middle circle - Frontend */}
         <motion.div 
-          className="absolute z-10 rounded-full border-2 border-indigo-200 w-96 h-96"
+          className="absolute z-[10] rounded-full border-2 border-indigo-200 w-96 h-96"
           variants={circleVariants}
           initial="hidden"
-          animate="visible"
+          animate={circleControls}
+          custom={1}
           transition={{ delay: 0.2 }}
         >
           {skillsData.frontend.map((skill, index) => {
@@ -113,8 +136,8 @@ const SkillsCircle = () => {
                 custom={index}
                 variants={itemVariants}
                 initial="hidden"
-                animate="visible"
-                className="absolute rounded-full bg-white shadow-md w-16 h-16 flex items-center justify-center transform -translate-x-8 -translate-y-8 hover:scale-110 transition-transform duration-300"
+                animate={isInView ? "visible" : "hidden"}
+                className="absolute z-[10] rounded-full bg-white shadow-md w-16 h-16 flex items-center justify-center transform -translate-x-8 -translate-y-8 hover:scale-110 transition-transform duration-300"
                 style={{ 
                   left: `calc(50% + ${position.x}px)`, 
                   top: `calc(50% + ${position.y}px)` 
@@ -131,10 +154,11 @@ const SkillsCircle = () => {
 
         {/* Outer circle - Backend */}
         <motion.div 
-          className="absolute rounded-full border-2 border-indigo-100 w-[32rem] h-[32rem]"
+          className="absolute z-[10] rounded-full border-2 border-indigo-100 w-[32rem] h-[32rem]"
           variants={circleVariants}
           initial="hidden"
-          animate="visible"
+          animate={circleControls}
+          custom={2}
           transition={{ delay: 0.4 }}
         >
           {skillsData.backend.map((skill, index) => {
@@ -152,7 +176,7 @@ const SkillsCircle = () => {
                 custom={index + skillsData.frontend.length}
                 variants={itemVariants}
                 initial="hidden"
-                animate="visible"
+                animate={isInView ? "visible" : "hidden"}
                 className="absolute rounded-full bg-white shadow-md w-16 h-16 flex items-center justify-center transform -translate-x-8 -translate-y-8 hover:scale-110 transition-transform duration-300"
                 style={{ 
                   left: `calc(50% + ${position.x}px)`, 
@@ -171,8 +195,11 @@ const SkillsCircle = () => {
         {/* Category labels */}
         <motion.div 
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
+          animate={labelControls}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { delay: 1, duration: 0.5 } }
+          }}
           className="absolute top-4 left-4 bg-indigo-100 px-4 py-2 rounded-full text-sm font-medium text-indigo-800"
         >
           Frontend
@@ -180,8 +207,11 @@ const SkillsCircle = () => {
         
         <motion.div 
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
+          animate={labelControls}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { delay: 1.2, duration: 0.5 } }
+          }}
           className="absolute bottom-4 right-4 bg-indigo-100 px-4 py-2 rounded-full text-sm font-medium text-indigo-800"
         >
           Backend

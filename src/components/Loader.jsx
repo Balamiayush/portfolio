@@ -18,6 +18,7 @@ const Loader = () => {
   }, []);
 
   useGSAP(() => {
+
     if (loaderRef.current) {
       gsap.to(loaderRef.current.children, {
         duration: 1,
@@ -26,7 +27,7 @@ const Loader = () => {
         stagger: 0.1,
         ease: "power1.inOut",
         onComplete: () => {
-          setTimeout(() => setIsLoading(false), 500); // Delay to ensure smooth transition
+          setTimeout(() => setIsLoading(false), 500);       
         },
       });
     }
@@ -39,8 +40,10 @@ const Loader = () => {
       ref={loaderRef}
       className="w-full h-screen fixed z-[100] flex overflow-hidden  "
     >
-      {Array.from({ length: 10 }).map((_, index) => (
-        <div key={index} className="h-full bg-slate-500 w-[25%]"></div>
+      {Array.from({ 
+        length: 10
+         }).map((_, index) => (
+        <div key={index} className="h-full bg-slate-500 w-[50%]"></div>
       ))}
     </div>
   );

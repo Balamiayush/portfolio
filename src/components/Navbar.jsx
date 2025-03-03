@@ -240,7 +240,7 @@ const Navbar = () => {
 
         {showHamburger && (
           <motion.div
-            className="w-15 h-15 lg:w-15 lg:h-15  fixed bg-blue-800 right-5 flex items-center justify-center rounded-full flex-col gap-1.5 lg:gap-2 cursor-pointer z-50"
+            className="w-15 h-15 lg:w-15 lg:h-15  fixed bg-blue-800  right-5 flex items-center justify-center rounded-full flex-col gap-1.5 lg:gap-2 cursor-pointer z-100"
             onClick={toggleMenu}
             initial="closed"
             animate={isOpen ? "open" : "closed"}
