@@ -4,8 +4,8 @@ import Lenis from "lenis";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Hero from "./pages/Hero";
 import Page2 from "./pages/Page2";
+import AreaExp from "./pages/AreaExp";
 import Loader from "./components/Loader";
-import Page3 from "./pages/Page3";
 import { useGSAP } from "@gsap/react";
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -38,8 +38,8 @@ useGSAP(()=>{
       <div className="w-full bg-[#fff]  main z-[10]   overflow-x-hidden relative">
       <Loader/>
         <Hero/>
+        <AreaExp/>
         <Page2/>
-        <Page3/>
       </div>
     </>
   );

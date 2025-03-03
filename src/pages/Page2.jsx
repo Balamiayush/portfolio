@@ -68,6 +68,7 @@ const Page2 = () => {
 
   return (
     <div
+      id="works-section"
       style={{ fontFamily: "var(--font-family1)" }}
       className="w-full lg:mt-5 px-4 overflow-hidden"
     >

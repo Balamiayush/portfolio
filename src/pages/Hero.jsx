@@ -13,8 +13,6 @@ import gsap from "gsap";
 const Hero = () => {
   const [currentHeadingIndex, setCurrentHeadingIndex] = useState(0);
   const headings = ["<Frontend Magic/>", "<Smooth Animations/>", "<Backend/>"];
-  const marquee = ["Frontend Magic", "Smooth Animations", "Backend"];
-
   const headingRef = useRef(null);
   const charRefs = useRef([]);
   const renderCharacters = (text) => {
@@ -33,12 +31,17 @@ const Hero = () => {
     if (!headingRef.current) return;
 
     gsap.killTweensOf(charRefs.current);
-
+    
     gsap.set(charRefs.current, {
       y: 50,
       opacity: 0,
     });
-
+    const color = ["#211C84","#0D4715","#212121"]
+    gsap.to(".mainheading",{
+      duration:0.2,
+      backgroundColor:color[currentHeadingIndex],
+      ease:"power1.inOut"
+    })
     gsap.to(charRefs.current, {
       duration: 0.6,
       y: 0,
@@ -63,7 +66,7 @@ const Hero = () => {
         <div className="hero-content   lg:mt-5   w-full h-[50vh] justify-evenly items-center  lg:justify-center lg:gap-[5rem] flex flex-col lg:flex-row ">
           <h1
             style={{
-              fontFamily: "var(--font-family4)",
+              fontFamily: "var(--font-family3)",
             }}
             className=" font-[var(--font-family5)] lg:w-[80%] text-[1rem] leading-none  flex flex-col items-center justify-center text-center  heroh1 lg:text-[2rem]  gap-2"
           >
@@ -76,16 +79,16 @@ const Hero = () => {
             <div className="flex  items-center justify-between  gap-10 ">
               <motion.span
                 ref={headingRef}
-                className="rounded-full p-2 cursor-pointer bg-gray-400   overflow-hidden heroh1"
+                className="rounded-full mainheading p-2 cursor-pointer bg-gray-400  text-white w-fit   overflow-hidden heroh1"
               >
                 {renderCharacters(headings[currentHeadingIndex])}
               </motion.span>
-              <a
+              {/* <a
                 href="#"
                 className="bg-orange-600 hover:bg-black transition-all duration-300 px-3 py-2  text-[1rem] lg:text-[1.5rem] text-white rounded-full"
               >
                 Contact Me
-              </a>
+              </a> */}
             </div>
             <div
               style={{

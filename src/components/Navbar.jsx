@@ -208,7 +208,6 @@ const Navbar = () => {
           </motion.a>
         </div>
 
-        {/* Desktop Navigation */}
         <div
           ref={navRef}
           className="relative  bg-gray-300   hidden items-right lg:flex  rounded-full h-10 px-2 z-10"
@@ -218,6 +217,13 @@ const Navbar = () => {
               key={index}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("works-section")?.scrollIntoView({
+                  behavior: "smooth",
+                  
+                });
+              }}
               className="text-[0.7rem] lg:text-[1rem] px-3 lg:px-5 py-2 relative rounded-full transition-all duration-300 text-black hover:text-white"
               href="#"
             >
@@ -234,7 +240,7 @@ const Navbar = () => {
 
         {showHamburger && (
           <motion.div
-            className="w-10 h-10 lg:w-15 lg:h-15 fixed bg-blue-800 right-5 flex items-center justify-center rounded-full flex-col gap-1.5 lg:gap-2 cursor-pointer z-50"
+            className="w-15 h-15 lg:w-15 lg:h-15  fixed bg-blue-800 right-5 flex items-center justify-center rounded-full flex-col gap-1.5 lg:gap-2 cursor-pointer z-50"
             onClick={toggleMenu}
             initial="closed"
             animate={isOpen ? "open" : "closed"}
@@ -260,7 +266,7 @@ const Navbar = () => {
             exit="closed"
             variants={menuVariants}
           >
-            <motion.div className="flex flex-col fixed right-0 top-0 lg:w-[40%] w-full z-10 h-screen bg-gray-900 py-4 items-center justify-center">
+            <motion.div className="flex flex-col fixed right-0 top-0 w-[40%]  z-10 h-screen bg-gray-900 py-4 items-center justify-center">
               {menuItems.map((item, index) => (
                 <motion.a
                   key={index}
