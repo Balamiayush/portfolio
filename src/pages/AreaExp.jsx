@@ -78,7 +78,7 @@ const SkillsCircle = () => {
       style={{
         fontFamily: "var(--font-family3)"
       }}
-      className="w-full min-h-[100vh] bg-gradient-to-b from-blue-50 to-indigo-50 py-16 overflow-hidden "
+      className="w-full      bg-gradient-to-b from-blue-50 to-indigo-50 py-16 overflow-hidden "
     >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -114,7 +114,7 @@ const SkillsCircle = () => {
 
         {/* Middle circle - Frontend */}
         <motion.div 
-          className="absolute z-[10] rounded-full border-2 border-indigo-200 w-96 h-96"
+          className="absolute z-[10] rounded-full border-2 border-indigo-200 w-96 h-96" 
           variants={circleVariants}
           initial="hidden"
           animate={circleControls}

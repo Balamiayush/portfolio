@@ -61,9 +61,9 @@ const Hero = () => {
 
   return (
   
-      <div className="w-full    flex flex-col  h-screen relative ">
+      <div className="w-full  lg:h-screen   flex flex-col     relative ">
       <Navbar />
-        <div className="hero-content   lg:mt-5   w-full h-[50vh] justify-evenly items-center  lg:justify-center lg:gap-[5rem] flex flex-col lg:flex-row ">
+        <div className="hero-content       w-full    items-center  lg:justify-center lg:gap-[5rem] flex flex-col lg:flex-row ">
           <h1
             style={{
               fontFamily: "var(--font-family3)",
@@ -83,12 +83,7 @@ const Hero = () => {
               >
                 {renderCharacters(headings[currentHeadingIndex])}
               </motion.span>
-              {/* <a
-                href="#"
-                className="bg-orange-600 hover:bg-black transition-all duration-300 px-3 py-2  text-[1rem] lg:text-[1.5rem] text-white rounded-full"
-              >
-                Contact Me
-              </a> */}
+             
             </div>
             <div
               style={{
@@ -118,15 +113,15 @@ const Hero = () => {
               </a>
             </div>
           </h1>
-          <div className="hero-image lg:mt-20 mt-10 w-[60vw] lg:w-[30vw] lg:h-[65vh] grayscale transition-all duration-500 hover:grayscale-0">
+          <div className="hero-image lg:mt-20 mt-10 w-[60vw]  lg:w-[30vw] lg:h-[65vh] grayscale transition-all duration-500 hover:grayscale-0">
             <img
               src="img/heroimg.png"
               alt="hero"
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
-        </div>
       <Footer/>
+        </div>
       </div>
 
   );
