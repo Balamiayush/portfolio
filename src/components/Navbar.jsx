@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
-  const headings = ["Hello!", "<AAYUSH/>"];
+  const headings = ["Hello!", "aryanabalami54@gmail.com"];
   const [currentHeading, setCurrentHeading] = useState(headings[0]);
   const [position, setPosition] = useState({
     left: 0,
@@ -189,7 +189,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-20 flex justify-between items-center transition-all duration-300 z-50">
+      <nav
+        style={{
+          fontFamily: "var(--font-family1)",
+        }}
+        className="w-full h-20 flex justify-between items-center transition-all duration-300 z-50 lg:px-4"
+      >
         <div className="flex items-center overflow-hidden h-16">
           <motion.a
             href="/"
@@ -197,7 +202,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-[1rem] lg:text-[1.5rem] cursor-pointer font-bold"
+            className="text-[1rem] lg:text-[1rem] cursor-pointer font-bold"
           >
             {currentHeading}
           </motion.a>
@@ -229,7 +234,7 @@ const Navbar = () => {
 
         {showHamburger && (
           <motion.div
-            className="w-15 h-15 fixed bg-blue-800 right-5 flex items-center justify-center rounded-full flex-col gap-2 cursor-pointer z-50"
+            className="w-10 h-10 lg:w-15 lg:h-15 fixed bg-blue-800 right-5 flex items-center justify-center rounded-full flex-col gap-1.5 lg:gap-2 cursor-pointer z-50"
             onClick={toggleMenu}
             initial="closed"
             animate={isOpen ? "open" : "closed"}
@@ -237,7 +242,7 @@ const Navbar = () => {
             {[1, 2, 3].map((i) => (
               <motion.div
                 key={i}
-                className="w-8 h-[2px] bg-white rounded-full"
+                className="w-5 h-[1px] lg:w-10 lg:h-[2px] bg-white rounded-full"
                 variants={lineVariants}
                 custom={i}
               />
@@ -246,7 +251,6 @@ const Navbar = () => {
         )}
       </nav>
 
- 
       <AnimatePresence>
         {isOpen && (
           <motion.div

@@ -5,6 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Hero from "./pages/Hero";
 import Page2 from "./pages/Page2";
 import Loader from "./components/Loader";
+import Page3 from "./pages/Page3";
 import { useGSAP } from "@gsap/react";
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -33,11 +34,12 @@ useGSAP(()=>{
 })
   return (
     <>
-    <div className="cirlce w-5 h-5 bg-red-500 z-[100] fixed rounded-full top-0 left-0 "></div>
+    <div className="cirlce w-4 h-4 bg-orange-500 z-[100] fixed rounded-full top-0 left-0 "></div>
       <div className="w-full bg-[#fff]  main z-[10]   overflow-x-hidden relative">
-      {/* <Loader/> */}
+      <Loader/>
         <Hero/>
-        {/* <Page2/> */}
+        <Page2/>
+        <Page3/>
       </div>
     </>
   );
