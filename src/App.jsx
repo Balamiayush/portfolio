@@ -4,7 +4,7 @@ import Lenis from "lenis";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { AnimatePresence } from 'framer-motion';
 // Import Components
 import Hero from "./pages/Hero";
 import Page2 from "./pages/Page2";
