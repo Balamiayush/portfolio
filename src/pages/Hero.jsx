@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import { FaLinkedin } from "react-icons/fa";
@@ -62,7 +61,7 @@ const Hero = () => {
   return (
   
       <div className="w-full  lg:h-screen   flex flex-col     relative ">
-      <Navbar />
+  
         <div className="hero-content       w-full    items-center  lg:justify-center lg:gap-[5rem] flex flex-col lg:flex-row ">
           <h1
             style={{

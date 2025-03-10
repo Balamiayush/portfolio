@@ -78,7 +78,7 @@ const SkillsCircle = () => {
       style={{
         fontFamily: "var(--font-family3)"
       }}
-      className="w-full      bg-gradient-to-b from-blue-50 to-indigo-50 py-16 overflow-hidden "
+      className="w-full    z-[-1]  bg-gradient-to-b from-blue-50 to-indigo-50 py-16 relative "
     >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -98,7 +98,7 @@ const SkillsCircle = () => {
       <div className="relative max-w-5xl mx-auto h-[70vh] flex items-center justify-center" ref={containerRef}>
         {/* Center circle with profile */}
         <motion.div 
-          className="absolute z-20 bg-white rounded-full shadow-xl w-40 h-40 flex items-center justify-center"
+          className="absolute  bg-white rounded-full shadow-xl w-40 h-40 flex items-center justify-center"
           variants={circleVariants}
           initial="hidden"
           animate={circleControls}
