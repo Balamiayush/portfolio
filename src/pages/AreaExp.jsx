@@ -78,7 +78,7 @@ const SkillsCircle = () => {
       style={{
         fontFamily: "var(--font-family3)"
       }}
-      className="w-full    z-[-1]  bg-gradient-to-b from-blue-50 to-indigo-50 py-16 relative "
+      className="w-full z-[-1]  bg-gradient-to-b from-blue-50 to-indigo-50 py-16 relative "
     >
       <motion.div
         initial={{ opacity: 0, y: -20 }}

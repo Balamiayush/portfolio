@@ -27,7 +27,7 @@ const Navbar = () => {
   const navRef = useRef(null);
   const headerRef = useRef(null);
   const animationRef = useRef(null);
-  const menuItems = ["About.", "Works.", "Contact."];
+  const menuItems = ["Works.", "About.", "Contact."];
 
   const split = (text) => {
     return text.split("").map((char, index) => (
@@ -186,7 +186,57 @@ const Navbar = () => {
       });
     });
   }, [isOpen]);
-
+  const clickingFun = (item) => {
+    setIsOpen(false);
+    
+    if (item === "Works.") {
+      // First animate the text
+      gsap.to(".span-nav .char", {
+        y: 100,
+        duration: 0.5,
+        ease: "power2.inOut",
+        stagger: 0.03,
+        onComplete: () => {
+          // After animation completes, scroll to the section
+          document.getElementById("work-section")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest"
+          });
+        }
+      });
+    } else if (item === "Contact.") {
+      // Similar animation for Contact section
+      gsap.to(".span-nav .char", {
+        y: 100,
+        duration: 0.5,
+        ease: "power2.inOut",
+        stagger: 0.03,
+        onComplete: () => {
+          document.getElementById("contact-section")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest"
+          });
+        }
+      });
+    } else if (item === "About.") {
+      // Add handling for About section if needed
+      gsap.to(".span-nav .char", {
+        y: 100,
+        duration: 0.5,
+        ease: "power2.inOut",
+        stagger: 0.03,
+        onComplete: () => {
+          document.getElementById("about-section")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest"
+          });
+        }
+      });
+    }
+  };
   return (
     <>
       <nav className="w-full h-20 flex justify-between items-center transition-all duration-300 z-50">
@@ -213,8 +263,9 @@ const Navbar = () => {
               key={index}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              href={item === "Works." ? "#work-section" : "#"}
               className="text-[0.7rem] lg:text-[1rem] px-3 lg:px-5 py-2 relative rounded-full transition-all duration-300 text-black hover:text-white"
-              href="#"
+              onClick={() => clickingFun(item)}
             >
               {item}
             </motion.a>
@@ -259,13 +310,15 @@ const Navbar = () => {
             <motion.div className="flex flex-col fixed right-0 top-0 lg:w-[40%] w-full z-10 h-screen bg-gray-900 py-4 items-center justify-center">
               {menuItems.map((item, index) => (
                 <motion.a
+                
                   key={index}
-                  href="#"
                   className={`menu-item-${index} px-8 py-4 text-[1rem] overflow-hidden border-b border-gray-500 relative flex items-center justify-center text-white lg:text-[6rem] leading-none`}
                   variants={itemVariants}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => clickingFun(item)}
+                  href="#"
                   onMouseEnter={() => handleMenuItemHover(index)}
                   onMouseLeave={() => handleMenuItemLeave(index)}
+                  
                 >
                   <motion.span className="text-[1rem]   span-nav2   border-b border-gray-900  relative lg:text-[6rem] leading-none">
                     {split(item)}
