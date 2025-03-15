@@ -239,7 +239,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className="w-full h-20 flex justify-between items-center transition-all duration-300 z-50">
+      <nav className="w-full h-20 flex p-5 justify-between items-center transition-all duration-300 z-50">
         <div className="flex items-center overflow-hidden h-16">
           <motion.a
             href="/"
