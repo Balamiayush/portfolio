@@ -37,10 +37,10 @@ const App = () => {
   });
   
   return (
-      <div id="#">
+     <>
         <Loader />
         <div className="cirlce w-4 h-4 bg-orange-500 z-[100] fixed rounded-full top-0 left-0"></div>
-        <div className="w-full bg-[#fff] main z-[10] overflow-x-hidden relative">
+        <div className="w-full bg-[#fff] main z-[10]  relative">
           <Navbar />
           <Hero />
           {/* <About /> */}
@@ -48,7 +48,7 @@ const App = () => {
           <Page2 />
           <Contact />
         </div>
-      </div>
+        </>
   );
 };
 

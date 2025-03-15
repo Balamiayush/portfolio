@@ -86,7 +86,7 @@ const Page2 = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full flex relative items-center justify-center flex-col gap-4"
+        className="w-full flex relative items-center justify-center flex-col gap-10 lg:gap-5"
       >
         {heading.map((item, index) => (
           <motion.div
