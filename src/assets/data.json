@@ -10,6 +10,11 @@
     "src": "/img/img3.jpg" 
   },
   {
+"name": "Scroll-Animation",
+    "link": "https://scrolling-animation-tau.vercel.app/",
+    "src": "/img/img8.png" 
+  },
+  {
     "name": "Ramos",
     "link": "https://react-gsap-ramos-colne.vercel.app/",
    "src": "/img/img2.jpg"
