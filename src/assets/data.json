@@ -1,10 +1,5 @@
 [
   {
-    "name": "MMC CLUB",
-    "link": "https://club-website-woad.vercel.app/",
-    "src": "/img/img7.png"
-  },
-  {
     "name": "Expo",
     "link": "https://exoape-clone-chi.vercel.app/",
     "src": "/img/img3.jpg" 
@@ -43,5 +38,10 @@
     "name": "Lazarev.",
     "link": "https://balamiayush.github.io/Lazarev/",
      "src": "/img/img10.png"
-  }  
+  },
+  {
+    "name": "MMC CLUB",
+    "link": "https://club-website-woad.vercel.app/",
+    "src": "/img/img7.png"
+  } 
 ]
