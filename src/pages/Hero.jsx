@@ -60,7 +60,7 @@ const Hero = () => {
 
   return (
   
-      <div className="w-full  lg:h-screen   flex flex-col     relative ">
+      <div className="w-full    flex flex-col   px-8 relative">
   
         <div className="hero-content       w-full    items-center  lg:justify-center lg:gap-[5rem] flex flex-col lg:flex-row ">
           <h1
@@ -69,8 +69,8 @@ const Hero = () => {
             }}
             className=" font-[var(--font-family5)] lg:w-[80%] text-[1rem] leading-none  flex flex-col items-center justify-center text-center  heroh1 lg:text-[2rem]  gap-2"
           >
-            <div className=" px-8  rounded-2xl  ">👋 Hi, I'm Aayush</div>
-            <div className=" px-8  rounded-2xl  ">
+            <div className="  rounded-2xl  ">👋 Hi, I'm Aayush</div>
+            <div className="   rounded-2xl  ">
               🚀 I craft immersive, interactive, and visually stunning web
               experiences, blending frontend magic, smooth animations, and
               seamless backend logic.
@@ -119,8 +119,9 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
-      <Footer/>
+
         </div>
+      <Footer/>
       </div>
 
   );

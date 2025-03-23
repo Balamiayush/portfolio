@@ -5,6 +5,13 @@
     "src": "/img/img3.jpg" 
   },
   {
+    
+      "name": "THIS IS MAGMA CLONE ",
+      "link": "https://balamiayush.github.io/scrolling-animation2/",
+      "src": "/img/img11.png"
+    
+  },
+  {
 "name": "Scroll-Animation",
     "link": "https://scrolling-animation-tau.vercel.app/",
     "src": "/img/img8.png" 
@@ -43,5 +50,6 @@
     "name": "MMC CLUB",
     "link": "https://club-website-woad.vercel.app/",
     "src": "/img/img7.png"
-  } 
+  }
+ 
 ]

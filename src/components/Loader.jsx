@@ -38,7 +38,7 @@ const Loader = () => {
   return (
     <div
       ref={loaderRef}
-      className="w-full h-screen fixed z-[100] flex overflow-hidden  "
+      className="w-full h-screen fixed top-0 left-0 z-[1000] flex overflow-hidden  "
     >
       {Array.from({ 
         length: 10

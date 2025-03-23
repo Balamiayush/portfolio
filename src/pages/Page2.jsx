@@ -2,11 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import data from "../assets/data.json";
+import { useGSAP } from "@gsap/react";
 
 const Page2 = () => {
   const [heading, setHeading] = useState(data);
   const boxesRef = useRef([]);
   const containersRef = useRef([]);
+  const circleRef = useRef(null);
 
   // Ensure refs array matches the current data length
   useEffect(() => {
@@ -66,11 +68,12 @@ const Page2 = () => {
     },
   };
 
+
   return (
     <div
       id="work-section"
       style={{ fontFamily: "var(--font-family1)" }}
-      className="w-full lg:mt-5 px-4 overflow-hidden"
+      className="w-full mt-10 lg:mt-5 px-4 page2"
     >
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
@@ -86,7 +89,7 @@ const Page2 = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full  flex relative items-center justify-center flex-col gap-10 lg:gap-5"
+        className="w-full flex relative items-center justify-center flex-col gap-10 lg:gap-5"
       >
         {heading.map((item, index) => (
           <motion.div
@@ -143,7 +146,7 @@ const Page2 = () => {
 
             <motion.div
               ref={(el) => (boxesRef.current[index] = el)}
-              className="box lg:w-[30vh] lg:h-[40vh] w-40 h-40 absolute  rounded-2xl bg-gray-400 opacity-0 overflow-hidden shadow-xl z-10 pointer-events-none origin-center"
+              className="box lg:w-[30vh] lg:h-[40vh] w-40 h-40 absolute rounded-2xl bg-gray-400 opacity-0 overflow-hidden shadow-xl z-10 pointer-events-none origin-center"
               initial={{ scale: 0.8 }}
             >
               <img
