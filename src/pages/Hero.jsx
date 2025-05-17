@@ -10,6 +10,7 @@ import { FaGithub } from "react-icons/fa";
 import gsap from "gsap";
 
 const Hero = () => {
+ 
   const [currentHeadingIndex, setCurrentHeadingIndex] = useState(0);
   const headings = ["<Frontend Magic/>", "<Smooth Animations/>", "<Backend/>"];
   const headingRef = useRef(null);

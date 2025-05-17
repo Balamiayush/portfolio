@@ -1,45 +1,95 @@
-import React, { useEffect, useRef } from "react"; 
+import  { useEffect, useRef } from "react"; 
 import gsap from "gsap";
 import Lenis from "lenis";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+
 // Import Components
 import Hero from "./pages/Hero";
 import Page2 from "./pages/Page2";
 import AreaExp from "./pages/AreaExp";
 import Loader from "./components/Loader";
+import Index from "./components/showcase/Index";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";  // Import the Navbar
 
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const lenisRef = useRef();
+
   
   useEffect(() => {
-    const lenis = new Lenis();
-
-    lenis.on("scroll", ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
+    window.scrollTo(0, 0);
+    const lenis = new Lenis({
+      autoRaf: true,
     });
-
-    gsap.ticker.lagSmoothing(0);
+    
+    lenis.on('scroll', (e) => {
+      // console.log(e);
+    });
+    
+    // Clean up function
+    return () => {
+      lenis.destroy();
+    };
   }, []);
   
-  useGSAP(() => {
-    window.addEventListener("mousemove", (e) => {
-      gsap.to(".cirlce", {
-        x: e.clientX,
-        y: e.clientY,
+ useGSAP(() => {
+  const circle = document.querySelector(".circle");
+  const imgs = document.querySelectorAll("img");
+
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const lerp = (start, end, amount) => (1 - amount) * start + amount * end;
+
+  // Update mouse target
+  window.addEventListener("mousemove", (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+  });
+
+  // Animation loop using requestAnimationFrame
+  function animate() {
+    currentX = lerp(currentX, targetX, 0.1);
+    currentY = lerp(currentY, targetY, 0.1);
+
+    gsap.set(circle, {
+      x: currentX,
+      y: currentY
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate(); // Start animation loop
+
+  // Hover effects
+  imgs.forEach((img) => {
+    img.addEventListener("mouseenter", () => {
+      gsap.to(circle, {
+        scale: 2,
+        duration: 0.3,
+        ease: "back.out(1.5)"
+      });
+    });
+
+    img.addEventListener("mouseleave", () => {
+      gsap.to(circle, {
+        scale: 1,
+        duration: 0.4,
+        ease: "elastic.out(1, 0.5)"
       });
     });
   });
+});
+
   
   return (
      <>
         <Loader />
-        <div className="cirlce w-4 h-4 bg-orange-500 z-[100] fixed rounded-full top-0 left-0"></div>
+        <div className=" circle w-4 h-4 bg-orange-500 z-[100] fixed rounded-full top-0 left-0"></div>
         <div className="w-full bg-[#fff] main z-[10]  relative">
           <Navbar />
           <Hero />
@@ -47,6 +97,7 @@ const App = () => {
           <AreaExp />
           <Page2 />
           <Contact />
+          <Index/>
         </div>
         </>
   );
