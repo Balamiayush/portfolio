@@ -27,7 +27,7 @@ const Index = () => {
   const [modal, setModal] = useState({active: false, index: 0})
 
   return (
-    <div className='main'>
+    <div className='main12'>
       <div className="body">
         {
 

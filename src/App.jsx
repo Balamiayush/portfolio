@@ -9,7 +9,7 @@ import Hero from "./pages/Hero";
 import Page2 from "./pages/Page2";
 import AreaExp from "./pages/AreaExp";
 import Loader from "./components/Loader";
-import Index from "./components/showcase/Index";
+// import Index from "./components/showcase/Index";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";  // Import the Navbar
 
@@ -18,7 +18,11 @@ const App = () => {
 
   
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.addEventListener("load", () => {
+      document.querySelector(".loader").classList.add("hidden");
+      document.querySelector(".main").classList.remove("hidden");
+      document.querySelector(".main").classList.add("block");
+    });
     const lenis = new Lenis({
       autoRaf: true,
     });
@@ -97,7 +101,7 @@ const App = () => {
           <AreaExp />
           <Page2 />
           <Contact />
-          <Index/>
+          {/* <Index/> */}
         </div>
         </>
   );
