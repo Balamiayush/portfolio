@@ -68,27 +68,10 @@ const App = () => {
   }
 
   animate(); // Start animation loop
+}, []);
 
   // Hover effects
-  imgs.forEach((img) => {
-    img.addEventListener("mouseenter", () => {
-      gsap.to(circle, {
-        scale: 2,
-        duration: 0.3,
-        ease: "back.out(1.5)"
-      });
-    });
-
-    img.addEventListener("mouseleave", () => {
-      gsap.to(circle, {
-        scale: 1,
-        duration: 0.4,
-        ease: "elastic.out(1, 0.5)"
-      });
-    });
-  });
-});
-
+ 
   
   return (
      <>

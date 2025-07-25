@@ -6,6 +6,20 @@
   },
   {
     
+      "name": "Prixa|digital ",
+      "link": "https://prixa.digital/",
+      "src": "/img/prixa.digital.png"
+    
+  },
+   {
+    
+      "name": "TingTing ",
+      "link": "https://www.tingting.io/",
+      "src": "/img/tinting.png"
+    
+  },
+ {
+    
       "name": "THIS IS MAGMA CLONE ",
       "link": "https://balamiayush.github.io/scrolling-animation2/",
       "src": "/img/img11.png"
@@ -16,21 +30,7 @@
     "link": "https://scrolling-animation-tau.vercel.app/",
     "src": "/img/img8.png" 
   },
-  {
-    "name": "Ramos",
-    "link": "https://react-gsap-ramos-colne.vercel.app/",
-   "src": "/img/img2.jpg"
-  },
-  {
-    "name": "Zentry",
-    "link": "https://zentry-com-clone.vercel.app/",
-     "src": "/img/img1.jpg"
-  },
-  {
-    "name": "Rhythminfluence",
-    "link": "https://rhythminfluence-clone.vercel.app/",
-     "src": "/img/img4.jpg"
-  },
+ 
   {
     "name": "Jeton",
     "link": "https://balamiayush.github.io/jeton-clone/",
@@ -45,11 +45,6 @@
     "name": "Lazarev.",
     "link": "https://balamiayush.github.io/Lazarev/",
      "src": "/img/img10.png"
-  },
-  {
-    "name": "MMC CLUB",
-    "link": "https://club-website-woad.vercel.app/",
-    "src": "/img/img7.png"
   }
  
 ]

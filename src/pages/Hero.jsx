@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 import { FaGithub } from "react-icons/fa";
 
@@ -122,7 +122,6 @@ const Hero = () => {
           </div>
 
         </div>
-      <Footer/>
       </div>
 
   );

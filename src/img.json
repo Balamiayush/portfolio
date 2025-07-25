@@ -9,11 +9,7 @@ export const img = [
     link: "https://expo-clone-1.vercel.app/",
     src: "/assets/projectimg/expo.png",
   },
-  {
-    name: "Ramos_clone",
-    link: "https://react-gsap-ramos-colne.vercel.app/",
-    src: "/assets/projectimg/ramos.png",
-  },
+ 
   {
     name: "Zentry_clone",
     link: "https://zentry-com-clone.vercel.app/",
